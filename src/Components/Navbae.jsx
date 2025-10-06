@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router";
+import ThemeToggle from "./ThemeToggle";
 
 const Navbae = () => {
   return (
@@ -29,21 +30,13 @@ const Navbae = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
               <li>
-                <a>Item 1</a>
+                <Link to="/">Home</Link>
               </li>
               <li>
-                <a>Parent</a>
-                <ul className="p-2">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
+                <Link to="/about">About</Link>
               </li>
               <li>
-                <a>Item 3</a>
+                <Link to="/contact">Contact</Link>
               </li>
             </ul>
           </div>
@@ -63,7 +56,7 @@ const Navbae = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Button</a>
+          <ThemeToggle></ThemeToggle>
         </div>
       </div>
     </div>

@@ -9,7 +9,7 @@ const Home = () => {
   // console.log(plants);
   return (
     <div>
-      <div className="grid grid-cols-3 mt-5 mx-3 gap-5 py-6">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-5 mx-3 gap-5 py-6">
         {plants.map((plant) => (
           <PlantCard key={plant.id} plant={plant}></PlantCard>
         ))}
