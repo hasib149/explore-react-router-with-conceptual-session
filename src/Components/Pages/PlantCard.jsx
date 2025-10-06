@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router";
 
 const PlantCard = ({ plant }) => {
-  console.log(plant);
+  //   console.log(plant);
   const { category, description, image, name, price } = plant;
   return (
     <div>
@@ -16,7 +16,7 @@ const PlantCard = ({ plant }) => {
           <p>{description}</p>
           <h2>{price}$</h2>
           <div className="card-actions justify-end">
-            <Link to="/plantsDetails" className="btn btn-primary">
+            <Link to={`/plantsDetails/${plant.id}`} className="btn btn-primary">
               View Details
             </Link>
           </div>
