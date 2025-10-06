@@ -7,6 +7,7 @@ import About from "./Components/Pages/About.jsx";
 import Contact from "./Components/Pages/Contact.jsx";
 import Home from "./Components/Pages/Home.jsx";
 import RootLayout from "./Components/Layouts/RootLayout.jsx";
+import PlantsDetails from "./Components/Pages/PlantsDetails.jsx";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
+        loader: () => fetch("https://openapi.programming-hero.com/api/plants"),
         element: <Home></Home>,
       },
       {
@@ -24,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <About></About>,
+      },
+      {
+        path: "/plantsDetails",
+        Component: PlantsDetails,
       },
     ],
   },
