@@ -9,10 +9,12 @@ import Home from "./Components/Pages/Home.jsx";
 import RootLayout from "./Components/Layouts/RootLayout.jsx";
 import PlantsDetails from "./Components/Pages/PlantsDetails.jsx";
 import axios from "axios";
+import LoadingSpinner from "./Components/Pages/LoadingSpinner.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
+    hydrateFallbackElement: <LoadingSpinner></LoadingSpinner>,
     Component: RootLayout,
     children: [
       {

@@ -1,15 +1,21 @@
 import React from "react";
-import { Outlet } from "react-router";
+import { Outlet, useNavigation } from "react-router";
 import Navbae from "../Navbae";
 import Footer from "../Footer";
+import LoadingSpinner from "../Pages/LoadingSpinner";
 
 const RootLayout = () => {
+  const navigation = useNavigation();
   return (
     <div>
       <Navbae></Navbae>
-      <main className="min-h-[calc(100vh-285px)]">
-        <Outlet></Outlet>
-      </main>
+      {navigation?.state === "loading" ? (
+        <LoadingSpinner></LoadingSpinner>
+      ) : (
+        <main className="min-h-[calc(100vh-285px)]">
+          <Outlet></Outlet>
+        </main>
+      )}
       <Footer></Footer>
     </div>
   );
